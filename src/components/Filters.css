@@ -1,0 +1,12 @@
+.filters{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    font-weight: 700;
+}
+
+.precios, .categorias {
+    display: flex;
+    gap: 1rem;
+}
+

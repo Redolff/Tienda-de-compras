@@ -8,7 +8,7 @@ export const Categorias = ({ setFilters }) => {
     }
 
     return (
-        <div>
+        <div className="categorias">
             <label htmlFor="category">Categoria</label>
             <select id="category" onChange={handleChangeCategory}>
                 <option value="all">Todos</option>

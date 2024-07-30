@@ -6,12 +6,13 @@ export const Precios = ({ setFilters }) => {
     const handleChangeMinPrice = (e) => {
         setFilters(prevState => ({
             ...prevState,
-            minPrice: e.target.value
+            minPrice: e.target.value,
         }))
+        setMinPrice(e.target.value)
     }
  
     return (
-        <div>
+        <div className="precios">
             <label htmlFor="price">Price</label>
             <input 
                 type="range" 
@@ -20,7 +21,7 @@ export const Precios = ({ setFilters }) => {
                 max='1000'
                 onChange={handleChangeMinPrice}
             />
-            {minPrice}
+            <span>${minPrice}</span>
         </div>
     )
 }

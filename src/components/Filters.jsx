@@ -1,5 +1,6 @@
 import { Categorias } from "./Categorias"
 import { Precios } from "./Precios"
+import './Filters.css'
 
 export const Filters = ({ setFilters }) => {
     

@@ -15,7 +15,7 @@ export const Products = ({ productos }) => {
     return (
         <section className="products">
             <ul>
-                {productos?.map(x => (
+                {productos?.slice(0, 10).map(x => (
                     <li key={x.id}>
                         <h3>
                             {x.description}

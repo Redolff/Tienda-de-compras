@@ -1,6 +1,19 @@
+*{
+    background-color: rgb(218, 213, 166);
+}
+
 main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+    width: 100%;     
 }

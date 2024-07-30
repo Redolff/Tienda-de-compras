@@ -14,17 +14,17 @@ export const App = () => {
     const filterProducts = (productos) => {
         return productos.filter(producto => {
             return (
-                producto.price >= filters.minPrice && (
+                producto.price >= filters.minPrice && 
+                    (
                     filters.category === 'all' ||
                     producto.category === filters.category
-                )
+                    )
             )
         })
     }
 
     const filteredProducts = filterProducts(productos)
     
-
     return (
         <main>
             <Header setFilters={setFilters}/>

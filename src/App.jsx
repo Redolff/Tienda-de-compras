@@ -6,11 +6,11 @@ import { Header } from './components/Header'
 
 export const App = () => {
     const { products } = useProductos()
-    const { filteredProducts, setFilters } = useFilters({ products })
+    const { filteredProducts } = useFilters({ products })
       
     return (
         <main>
-            <Header setFilters={setFilters}/>
+            <Header />
             <Products products={filteredProducts}/>
         </main>
     )

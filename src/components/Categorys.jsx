@@ -1,4 +1,8 @@
-export const Categorys = ({ setFilters }) => {
+import { useContext } from "react"
+import { FilterContext } from "../context/FilterContext"
+
+export const Categorys = () => {
+    const { setFilters } = useContext(FilterContext)
 
     const handleChangeCategory = (e) => {
         setFilters(prevState => ({

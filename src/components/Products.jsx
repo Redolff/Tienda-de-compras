@@ -1,8 +1,9 @@
+import { AddToCartIcon } from './Icons'
 import './Products.css'
 
-export const Products = ({ productos }) => {
+export const Products = ({ products }) => {
 
-    const img = () => {
+    /*const img = () => {
         return 
             <img 
                 src={x.thumbnail} 
@@ -10,12 +11,12 @@ export const Products = ({ productos }) => {
                 width={250} 
                 height={250}
             />
-    }
+    }*/
         
     return (
         <section className="products">
             <ul>
-                {productos?.slice(0, 10).map(x => (
+                {products?.map(x => (
                     <li key={x.id}>
                         <h3>
                             {x.description}
@@ -24,6 +25,9 @@ export const Products = ({ productos }) => {
                             <strong> {x.title} </strong> - ${x.price}
                         </div>
                         <div>
+                            <button onClick={() => console.log('Agregar al carro')}>
+                                <AddToCartIcon />
+                            </button>
                         </div>
                     </li>
                 ))}

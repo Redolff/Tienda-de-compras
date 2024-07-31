@@ -1,14 +1,14 @@
 import { useState } from "react"
 
-export const Precios = ({ setFilters }) => {
+export const Prices = ({ setFilters }) => {
     const [minPrice, setMinPrice] = useState(0)
 
     const handleChangeMinPrice = (e) => {
+        setMinPrice(e.target.value)
         setFilters(prevState => ({
             ...prevState,
             minPrice: e.target.value,
         }))
-        setMinPrice(e.target.value)
     }
  
     return (

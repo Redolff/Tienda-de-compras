@@ -2,15 +2,12 @@ import { useEffect, useState } from 'react'
 import { products as initialProducts } from '../mocks/products.json'
 
 export const useProductos = () => {
-    const [productos, setProductos] = useState([])
+    const [products, setProducts] = useState([])
 
     useEffect(() => {
-
         const newProductos = initialProducts
-        setProductos(newProductos)
-
+        setProducts(newProductos)
     }, [])
 
-    return { productos }
-
+    return { products }
 }

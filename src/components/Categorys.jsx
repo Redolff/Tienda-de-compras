@@ -1,4 +1,4 @@
-export const Categorias = ({ setFilters }) => {
+export const Categorys = ({ setFilters }) => {
 
     const handleChangeCategory = (e) => {
         setFilters(prevState => ({

@@ -1,12 +1,10 @@
-export const CartItem = ({ img, title, price, quantity, addToCart }) => {
+export const CartItem = ({ thumbnail, title, price, quantity, addToCart }) => {
 
     return (
         <li>
             <img 
-                src='https://http2.mlstatic.com/D_NQ_NP_864844-MLM51559388062_092022-O.webp'
-                alt='Iphone'
-                width={200}
-                height={200}
+                src={thumbnail}
+                alt={title}
             />
             <div>
                 <strong> {title} </strong> - ${price}
@@ -15,7 +13,7 @@ export const CartItem = ({ img, title, price, quantity, addToCart }) => {
                 <small>
                     Cantidad: {quantity}
                 </small>
-                <button onClick={() => console.log('addToCart(product)')}>+</button>
+                <button onClick={addToCart}>+</button>
             </footer>
         </li>
     )

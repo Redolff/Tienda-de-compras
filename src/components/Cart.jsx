@@ -1,6 +1,6 @@
+import './Cart.css'
 import { useId } from 'react'
 import { useCart } from '../hooks/useCart'
-import './Cart.css'
 import { CartItem } from './CartItem'
 import { CartIcon, ClearCartIcon } from './Icons'
 
@@ -26,7 +26,7 @@ export const Cart = () => {
                     ))}
                 </ul>
 
-                <button onClick={() => console.log('ClearCart')}>
+                <button onClick={clearCart}>
                     <ClearCartIcon />
                 </button>
             </aside>

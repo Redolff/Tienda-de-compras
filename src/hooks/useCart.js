@@ -1,8 +1,12 @@
-import { useContext, useState } from "react"
+import { useContext } from "react"
 import { CartContext } from "../context/CartContext"
 
 export const useCart = () => {
     const { cart, setCart} = useContext(CartContext)
+
+    if (cart === undefined) {
+        throw new Error('useCart must be used within a CartProvider')
+    }
 
     const addToCart = (product) => {
 
@@ -25,10 +29,16 @@ export const useCart = () => {
         ]))      
     }
 
+    const removeFromCart = (product) => {
+        //Filtro el carro y solo muestro los que no estan dentro de el.
+        const newCart = cart.filter(item => item.id !== product.id)
+        setCart(newCart)
+    }
+
     const clearCart = () => {
         setCart([])
     }
 
-    return { cart, addToCart, clearCart }
+    return { cart, addToCart, clearCart, removeFromCart }
 
 }

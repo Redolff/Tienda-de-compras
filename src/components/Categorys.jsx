@@ -16,11 +16,10 @@ export const Categorys = () => {
             <label htmlFor="category">Categoria</label>
             <select id="category" onChange={handleChangeCategory}>
                 <option value="all">Todos</option>
-                <option value="smartphones">Celulares</option>
-                <option value="laptops">Computadoras</option>
-                <option value="skincare">Skincare</option>
+                <option value="beauty">Belleza</option>
+                <option value="groceries">Comestibles</option>
                 <option value="fragrances">Fragancias</option>
-                <option value="home-decoration">Decoraciones del hogar</option>
+                <option value="furniture">Muebles</option>
             </select>
         </div>
     )

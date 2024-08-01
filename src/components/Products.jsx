@@ -1,40 +1,56 @@
-import { useCart } from '../hooks/useCart'
-import { AddToCartIcon } from './Icons'
 import './Products.css'
+import { useCart } from '../hooks/useCart'
+import { AddToCartIcon, ClearCartIcon } from './Icons'
 
 export const Products = ({ products }) => {
 
-    const { addToCart } = useCart()
+    const { addToCart, removeFromCart, cart } = useCart()
+
+    const checkProductInCart = (product) => {
+        return cart.some(item => item.id === product.id)
+    }
     
     /*const img = () => {
         return 
-            <img 
-                src={x.thumbnail} 
-                alt={x.title} 
-                width={250} 
-                height={250}
-            />
+            
     }*/
         
     return (
         <section className="products">
             <ul>
-                {products?.map(x => (
-                    <li key={x.id}>
-                        <h3>
-                            {x.description}
-                        </h3>
-                        <div>
-                            <strong> {x.title} </strong> - ${x.price}
-                        </div>
-                        <div>
-                            <button onClick={() => addToCart(x)}>
-                                <AddToCartIcon />
-                            </button>
-                        </div>
-                    </li>
-                ))}
-            </ul>
+                {products?.map(x => {
+                    const isProductInCart = checkProductInCart(x)
+                    return (
+                        <li key={x.id}>
+                            <img 
+                                src={x.thumbnail} 
+                                alt={x.title} 
+                                height={150}
+                            />
+                            <div>
+                                <strong> {x.title} </strong> - ${x.price}
+                            </div>
+                            <div>
+                                <button 
+                                    style={{  backgroundColor: isProductInCart ? 'red' : '#09f'}}
+                                    onClick={() => {
+                                        isProductInCart
+                                            ? removeFromCart(x)
+                                            : addToCart(x)
+                                    }}>
+                                        {
+                                            isProductInCart 
+                                                ? <ClearCartIcon />
+                                                : <AddToCartIcon />
+                                        }
+                                </button>
+                            </div>
+                        </li>
+                    )
+                }
+                
+                )}
+                </ul>
         </section>
     )
 }

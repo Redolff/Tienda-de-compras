@@ -1,12 +1,26 @@
 import { useEffect, useState } from 'react'
-import { products as initialProducts } from '../mocks/products.json'
 
 export const useProductos = () => {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        const newProductos = initialProducts
-        setProducts(newProductos)
+        const fetchData = async() => {
+            const API = 'https://dummyjson.com/products'
+            try{
+                const response = await fetch(API)
+                if(!response.ok) {
+                    throw new Error('Error fetching API')
+                }
+
+                const data = await response.json()
+                const newProducts = data.products
+                setProducts(newProducts)
+            }
+            catch(e){
+                console.log(e.message)
+            }
+        }
+        fetchData()
     }, [])
 
     return { products }

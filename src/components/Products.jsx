@@ -1,8 +1,11 @@
+import { useCart } from '../hooks/useCart'
 import { AddToCartIcon } from './Icons'
 import './Products.css'
 
 export const Products = ({ products }) => {
 
+    const { addToCart } = useCart()
+    
     /*const img = () => {
         return 
             <img 
@@ -25,7 +28,7 @@ export const Products = ({ products }) => {
                             <strong> {x.title} </strong> - ${x.price}
                         </div>
                         <div>
-                            <button onClick={() => console.log('Agregar al carro')}>
+                            <button onClick={() => addToCart(x)}>
                                 <AddToCartIcon />
                             </button>
                         </div>

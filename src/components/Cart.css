@@ -1,5 +1,5 @@
 .cart {
-    background: rgb(197, 192, 141);
+    background: rgb(143, 142, 136);
     display: none;
     padding: 32px;
     position: fixed;
@@ -53,4 +53,8 @@
 .cart-button ~ input:checked ~ .cart {
     height: 100%;
     display: block;
+}
+
+.btn-item {
+    cursor: pointer;
 }

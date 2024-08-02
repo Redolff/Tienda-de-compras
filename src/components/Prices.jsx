@@ -1,7 +1,8 @@
-import { useContext } from "react"
+import { useContext, useId } from "react"
 import { FilterContext } from "../context/FilterContext"
 
 export const Prices = () => {
+    const priceId = useId()
     const { filters, setFilters } = useContext(FilterContext)
 
     const handleChangeMinPrice = (e) => {
@@ -13,10 +14,10 @@ export const Prices = () => {
  
     return (
         <div className="precios">
-            <label htmlFor="price">Price</label>
+            <label htmlFor={priceId}>Price</label>
             <input 
                 type="range" 
-                id="price"
+                id={priceId}
                 min='0'
                 max='1000'
                 onChange={handleChangeMinPrice}

@@ -1,5 +1,4 @@
 export const CartItem = ({ thumbnail, title, price, quantity, addToCart }) => {
-
     return (
         <li>
             <img 
@@ -13,7 +12,7 @@ export const CartItem = ({ thumbnail, title, price, quantity, addToCart }) => {
                 <small>
                     Cantidad: {quantity}
                 </small>
-                <button onClick={addToCart}>+</button>
+                <button className="btn-item" onClick={addToCart}>+</button>
             </footer>
         </li>
     )

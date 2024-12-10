@@ -1,16 +1,23 @@
 .cart {
-    background: rgb(143, 142, 136);
+    background-color: #fff;
     display: none;
     padding: 32px;
     position: fixed;
     right: 0px;
     top: 0px;
     width: 200px;
+    max-height: 600px;
+    overflow-y: auto;
+    border-radius: 5px;
 }
   
 .cart img {
     aspect-ratio: 16/9;
     width: 100%;
+}
+
+.cart ul {
+    list-style-type: none;
 }
   
 .cart li {
@@ -31,7 +38,6 @@
 
 .cart-button {
     align-items: center;
-    background: #09f;
     border-radius: 9999px;
     cursor: pointer;
     display: flex;
@@ -46,6 +52,7 @@
     z-index: 9999;
 }
 
+
 .cart-button:hover {
     scale: 1.1;
 }
@@ -57,4 +64,9 @@
 
 .btn-item {
     cursor: pointer;
+}
+
+.btn-clear {
+    cursor: pointer;
+    margin-bottom: 50px;
 }

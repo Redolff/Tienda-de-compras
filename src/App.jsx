@@ -12,11 +12,9 @@ export const App = () => {
       
     return (
         <CartProvider>
-            <main>
                 <Header />
                 <Cart />    
                 <Products products={filteredProducts}/>
-            </main>
         </CartProvider>
     )
 }

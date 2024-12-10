@@ -1,4 +1,6 @@
-export const CartItem = ({ thumbnail, title, price, quantity, addToCart }) => {
+import { RemoveFromCartIcon } from "./Icons"
+
+export const CartItem = ({ thumbnail, title, price, quantity, addToCart, removeFromCart }) => {
     return (
         <li>
             <img 
@@ -12,7 +14,10 @@ export const CartItem = ({ thumbnail, title, price, quantity, addToCart }) => {
                 <small>
                     Cantidad: {quantity}
                 </small>
-                <button className="btn-item" onClick={addToCart}>+</button>
+                <button className="btn-item" onClick={addToCart}> + </button>
+                <button className="btn-item" onClick={removeFromCart}> <i className="fas fa-trash"></i>
+                </button>
+
             </footer>
         </li>
     )

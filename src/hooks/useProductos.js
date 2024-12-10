@@ -17,7 +17,7 @@ export const useProductos = () => {
                 setProducts(newProducts)
             }
             catch(e){
-                console.log(e.message)
+                console.log('error', e.message)
             }
         }
         fetchData()

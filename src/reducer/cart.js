@@ -7,10 +7,15 @@ export const reducer = (state, action) => {
 
         case 'ADD_TO_CART': {
             const productInCartIndex = state.findIndex(item => item.id === payload.id)
-            // Producto no esta en el carrito
+            // Producto esta en el carrito
             if(productInCartIndex >= 0){
                 const newCart = [...state]
-                newCart[productInCartIndex].quantity += 1
+                const product = newCart[productInCartIndex]
+                //Actualizo cantidad
+                product.quantity += 1
+                //Actualizo precio total
+                product.price = product.unitPrice * product.quantity;
+
                 return newCart
             }
             // Producto no esta en el carrito
@@ -18,7 +23,9 @@ export const reducer = (state, action) => {
                 ...state,
                 {
                     ...payload,
-                    quantity: 1
+                    quantity: 1,
+                    unitPrice: payload.price,
+                    price: payload.price
                 }
             ]
         }

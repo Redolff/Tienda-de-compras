@@ -1,12 +1,16 @@
 import './Cart.css'
-import { useId } from 'react'
+import { useId, useMemo } from 'react'
 import { useCart } from '../hooks/useCart'
 import { CartItem } from './CartItem'
 import { CartIcon, ClearCartIcon } from './Icons'
 
 export const Cart = () => {
     const cartCheckBoxId = useId()
-    const { cart, addToCart, removeFromCart, clearCart } = useCart()    
+    const { cart, addToCart, removeFromCart, clearCart } = useCart()
+    
+    const sumTotal = useMemo(() => 
+        cart.reduce((acc, el) => acc + el.price, 0).toFixed(), 
+    [cart]) 
 
     return (
         <>
@@ -26,6 +30,10 @@ export const Cart = () => {
                         />))
                     }
                 </ul>
+
+                <p>
+                    Total price: ${sumTotal}     
+                </p>
 
                 <button onClick={clearCart} className='btn-clear'>
                     <ClearCartIcon />

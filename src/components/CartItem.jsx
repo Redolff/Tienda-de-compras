@@ -1,5 +1,3 @@
-import { RemoveFromCartIcon } from "./Icons"
-
 export const CartItem = ({ thumbnail, title, price, quantity, addToCart, removeFromCart }) => {
     return (
         <li>

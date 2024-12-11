@@ -1,19 +1,17 @@
-import { useContext } from "react"
+import { useContext, useMemo } from "react"
 import { FilterContext } from "../context/FilterContext.jsx"
 
 export const useFilters = ({ products }) => {
     const { filters, setFilters } = useContext(FilterContext)
 
-    const filterProducts = (products) => {
+    const filteredProducts = useMemo(() => {
         return products.filter(product => {
             return product.price >= filters.minPrice && (
                 filters.category === 'all' ||
                 product.category === filters.category
             )
         })
-    }
-
-    const filteredProducts = filterProducts(products)
+    }, [products, filters.minPrice, filters.category])
     
     return { filteredProducts, setFilters }    
 }

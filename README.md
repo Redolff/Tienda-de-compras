@@ -15,3 +15,5 @@ Haz uso de useContext para evitar pasar props innecesarias.
 - Haz que se puedan eliminar la cantidad de productos del carrito.
 - Sincroniza los cambios del carrito con la lista de productos.
 - Guarda en un localStorage el carrito para que se recupere al recargar la pagina.
+
+  Proyecto deployado: https://shoppingreact-flame.vercel.app/

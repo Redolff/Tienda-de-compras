@@ -1,11 +1,30 @@
 .filters{
     display: flex;
-    justify-content: space-between;
-    width: 60%;
-    font-weight: 700;
+    gap: 20px;
 }
 
 .precios, .categorias {
     display: flex;
-    gap: 1rem;
+    align-items: center;
+    gap: 10px;
+    background: var(--black);
+    padding: 8px 12px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.precios input[type='range'] {
+    accent-color: var(--secondary-color);
+}
+
+.categorias select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid var(--primary-color);
+    cursor: pointer;
+}
+
+.categorias select:hover {
+    background: var(--secondary-color);
+    color: var(--white);
 }

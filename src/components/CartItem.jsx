@@ -13,7 +13,8 @@ export const CartItem = ({ thumbnail, title, price, quantity, addToCart, removeF
                     Cantidad: {quantity}
                 </small>
                 <button className="btn-item" onClick={addToCart}> + </button>
-                <button className="btn-item" onClick={removeFromCart}> <i className="fas fa-trash"></i>
+                <button className="btn-item" onClick={removeFromCart}> 
+                    <i className="fas fa-trash"></i>
                 </button>
 
             </footer>

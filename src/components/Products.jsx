@@ -20,14 +20,13 @@ export const Products = ({ products }) => {
                                 <img
                                     src={x.thumbnail}
                                     alt={x.title}
-                                    height={150}
                                 />
                                 <div>
                                     <strong> {x.title} </strong> - ${x.price}
                                 </div>
                                 <div>
                                     <button
-                                        style={{ backgroundColor: isProductInCart ? 'red' : '#09f' }}
+                                        className={isProductInCart ? 'remove-from-cart' : 'add-to-cart'}
                                         onClick={() => {
                                             isProductInCart
                                                 ? removeFromCart(x)
@@ -35,8 +34,8 @@ export const Products = ({ products }) => {
                                         }}>
                                         {
                                             isProductInCart
-                                                ? <ClearCartIcon />
-                                                : <AddToCartIcon />
+                                                ? <span> Remover del carrito <ClearCartIcon /> </span>
+                                                : <span> Agregar al carrito <AddToCartIcon /> </span>
                                         }
                                     </button>
                                 </div>

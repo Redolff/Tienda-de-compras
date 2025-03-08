@@ -1,19 +1,36 @@
-*{
-    background-color: rgb(228, 219, 142);
+* {
+    --primary-color: #2C3E50;
+    /* Azul oscuro elegante */
+    --secondary-color: #E74C3C;
+    /* Rojo vibrante */
+    --background-color: #ECF0F1;
+    /* Gris claro para fondo */
+    --text-color: #333;
+    /* Negro suave para texto */
+    --white: #FFFFFF;
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-.header{
+.header {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding-bottom: 20px;
-    width: 100%;     
+    padding: 15px 5%;
+    background-color: var(--primary-color);
+    color: var(--white);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.8rem;
+    font-weight: bold;
 }

@@ -16,10 +16,12 @@ export const Cart = () => {
         <>
             <label className='cart-button' htmlFor={cartCheckBoxId} title='Carrito'>
                 <CartIcon />
+                {cart.length > 0 && <span className="cart-count"> {cart.length} </span>}
             </label>
             <input id={cartCheckBoxId} type="checkbox" hidden />
 
             <aside className='cart'>
+                
                 <ul>
                     {cart.map(x => (
                         <CartItem
@@ -34,10 +36,10 @@ export const Cart = () => {
                 <p>
                     Total price: ${sumTotal}     
                 </p>
-
                 <button onClick={clearCart} className='btn-clear'>
                     <ClearCartIcon />
                 </button>
+
             </aside>
         </>
     )

@@ -2,9 +2,11 @@ import { useEffect, useState } from 'react'
 
 export const useProductos = () => {
     const [products, setProducts] = useState([])
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         const fetchData = async() => {
+            setLoading(true)
             const API = 'https://dummyjson.com/products'
             try{
                 const response = await fetch(API)
@@ -17,11 +19,15 @@ export const useProductos = () => {
                 setProducts(newProducts)
             }
             catch(e){
-                console.log('error', e.message)
+                console.log('error ', e.message)
+                setLoading(false)
+            }
+            finally {
+                setLoading(false)
             }
         }
         fetchData()
     }, [])
 
-    return { products }
+    return { products, loading }
 }

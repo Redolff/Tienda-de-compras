@@ -36,6 +36,21 @@
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.9);
 }
 
+.products .product-link {
+    cursor: pointer;
+    list-style: none;
+    text-decoration: none;
+}
+
+.products .title-price {
+    margin-top: 10px;
+}
+
+.products strong {
+    color: rgba(0, 0, 0, 0.911);
+}
+
+
 .products img {
     border-radius: 8px;
     width: 100%;

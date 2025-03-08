@@ -1,0 +1,52 @@
+.star-rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 18px;
+    color: gold;
+    position: relative;
+}
+
+.rating-number {
+    font-size: 16px;
+    margin-left: 6px;
+    color: #333;
+}
+
+.star {
+    position: relative;
+}
+
+.star.full {
+    color: gold;
+}
+
+.star.empty {
+    color: lightgray;
+}
+
+.star.half {
+    color: lightgray;
+    position: relative;
+}
+
+.star.half::before {
+    content: "★";
+    color: gold;
+    position: absolute;
+    width: 50%;
+    overflow: hidden;
+}
+
+.star.quarter {
+    color: gold;
+    position: relative;
+}
+
+.star.quarter::before {
+    content: "★";
+    color: gold;
+    position: absolute;
+    width: 75%;
+    overflow: hidden;
+}

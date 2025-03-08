@@ -1,6 +1,6 @@
 import { Categorys } from "./Categorys"
 import { Prices } from "./Prices"
-import './Filters.css'
+import '../styles/Filters.css'
 
 export const Filters = () => {
     

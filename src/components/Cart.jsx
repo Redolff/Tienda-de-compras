@@ -1,8 +1,8 @@
-import './Cart.css'
 import { useId, useMemo } from 'react'
 import { useCart } from '../hooks/useCart'
 import { CartItem } from './CartItem'
 import { CartIcon, ClearCartIcon } from './Icons'
+import '../styles/Cart.css'
 
 export const Cart = () => {
     const cartCheckBoxId = useId()

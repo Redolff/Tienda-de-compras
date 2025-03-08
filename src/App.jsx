@@ -1,20 +1,22 @@
-import './App.css'
-import { Products } from './components/Products'
-import { useProductos } from './hooks/useProductos'
-import { useFilters } from './hooks/useFilters'
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { Home } from './components/Home'
+import { ProductDetails } from './components/ProductDetails'
+import { CartProvider } from './context/CartContext'
 import { Header } from './components/Header'
 import { Cart } from './components/Cart'
-import { CartProvider } from './context/CartContext'
+import './App.css'
 
 export const App = () => {
-    const { products } = useProductos()
-    const { filteredProducts } = useFilters({ products })
-      
     return (
-        <CartProvider>
+        <BrowserRouter>
+            <CartProvider>
                 <Header />
-                <Cart />    
-                <Products products={filteredProducts}/>
-        </CartProvider>
+                <Cart />
+                <Routes>
+                    <Route path='/' element={<Home />} />
+                    <Route path='/product/:id' element={<ProductDetails />} />
+                </Routes>
+            </CartProvider>
+        </BrowserRouter>
     )
 }
